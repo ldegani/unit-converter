@@ -3,3 +3,7 @@
 export function isValidNumber(value) {
   return !isNaN(value) && isFinite(value);
 }
+
+export function isValidUnit(value) {
+  return typeof value === 'function';
+}
