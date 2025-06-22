@@ -3,8 +3,10 @@
 import { convertKgToLbs } from './converter.js';
 
 export function setupEventListeners() {
-  const form = document.querySelector('#converter-form');
-  form.addEventListener('submit', handleConversion);
+  const btnConvert = document.querySelector('#btn-convert');
+  btnConvert.addEventListener('click', () => {
+    console.log('button')
+  });
 }
 
 function handleConversion(e) {
