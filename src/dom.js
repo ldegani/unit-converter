@@ -12,7 +12,8 @@ export function setupEventListeners() {
 function handleConversion(e) {
   e.preventDefault();
 
-  const inputValue = parseFloat(document.querySelector('#unit-input').value);
+  // const inputValue = parseFloat(document.querySelector('#unit-input').value);
+  const inputRawValue = document.querySelector('#unit-input').value;
   const conversionType = document.querySelector('#conversion-type').value;
 
   const convertFunction = conversions[conversionType];
@@ -22,11 +23,13 @@ function handleConversion(e) {
     return;
   }
 
-  // if (!utils.isValidNumber(inputValue)) {
-  //   returnError('Please enter a valid number');
-  //   return;
-  // }
+  if (!utils.isValidNumber(inputRawValue)) {
+    console.log(false);
+    renderError('Enter a valid number');
+    return;
+  };
 
+  const inputValue = parseFloat(inputRawValue);
   const result = convertFunction(inputValue);
   const unit = units[conversionType];
   

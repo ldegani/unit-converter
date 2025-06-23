@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/app.js', // Entry point
@@ -11,6 +12,19 @@ module.exports = {
     static: './dist',
     port: 8080,
     open: true,
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './public/index.html', // Source of html
+    }),
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
   },
   mode: 'development',
 };
