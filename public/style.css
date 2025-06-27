@@ -40,17 +40,26 @@ html {
   text-align: center;
 }
 
-/* body{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-} */
-
 header {
   padding: 1rem;
   background-color: var(--color-panel-bg);
   border-bottom: 2px solid var(--color-divider);
+}
+
+#container-data {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 1rem;
+}
+
+.field {
+  text-align: start;
+}
+
+.field-label {
+  margin-left: 0.25rem;
 }
 
 button,
@@ -63,12 +72,23 @@ form {
   padding: 1rem;
 }
 
-form input {
-  margin: 0.5rem;
-  padding: 0.25rem;
-  border-radius: 0.5rem;
+input,
+output {
+  display: block;
+  width: 250px;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--color-text-sec);
+  background-color: var(--color-panel-bg);
+  border: 1px solid var(--color-divider);
+  border-radius: 6px;
+  box-sizing: border-box;
 }
 
-#container-result {
-  padding: 0.5rem;
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit--outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

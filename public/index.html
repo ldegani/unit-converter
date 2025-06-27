@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unit Converter</title>
-  <!-- <link rel="stylesheet" href="./style.css"> -->
   <script src="../dist/bundle.js" defer></script>
 </head>
 <body>
@@ -13,11 +12,15 @@
   </header>
   <main>
     <form action="#">
-      <label for="unit-input">From:</label>
-      <input type="number" id="unit-input" value="0" />
-      <div id="container-result">
-        <strong id="result-label">Result:</strong>
-        <output id="result">0</output>
+      <div id="container-data">
+        <div id="container-input" class="field">
+          <label for="unit-input" class="field-label"><strong>From:</strong></label>
+          <input type="number" id="unit-input" value="0" />
+        </div>
+        <div id="container-result" class="field">
+          <strong id="result-label" class="field-label">Result:</strong>
+          <output id="result">0</output>
+        </div>
       </div>
       <select id="conversion-type">
         <option value="default" selected>Select Unit</option>
