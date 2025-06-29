@@ -39,9 +39,11 @@ function handleConversion(e) {
 function renderError(message) {
   const resultContainer = document.querySelector('#result');
   resultContainer.textContent = message;
+  resultContainer.classList.add('result-error');
 }
 
 function renderResult(value, unit) {
   const resultContainer = document.querySelector('#result');
+  resultContainer.classList.remove('result-error');
   resultContainer.textContent = `${value.toFixed(2)} ${unit}`;
 }
